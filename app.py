@@ -11,13 +11,22 @@ st.title("🍌 Klasifikasi Kematangan Buah Berdasarkan Warna")
 st.caption("Upload gambar pisang/mangga dengan latar sederhana untuk hasil terbaik.")
 
 # Sidebar: pilih jenis buah dan parameter
-fruit = st.sidebar.selectbox("Jenis buah", ["Pisang", "Mangga", "Tomat", "Apel"])
+fruit = st.sidebar.selectbox(
+    "Jenis buah",
+    ["Pisang", "Mangga", "Tomat", "Apel", "Pepaya", "Jeruk", "Semangka", "Stroberi", "Anggur", "Nanas"]
+)
 # Preset ambang warna untuk tiap buah
 presets = {
     "Pisang": {"green": (40, 80), "yellow": (22, 33), "brown_v": 80},
     "Mangga": {"green": (40, 85), "yellow": (15, 40), "brown_v": 70},
     "Tomat": {"green": (40, 85), "yellow": (10, 25), "brown_v": 60},
-    "Apel": {"green": (35, 75), "yellow": (20, 40), "brown_v": 65}
+    "Apel": {"green": (35, 75), "yellow": (20, 40), "brown_v": 65},
+    "Pepaya": {"green": (35, 75), "yellow": (15, 30), "brown_v": 70},
+    "Jeruk": {"green": (40, 85), "yellow": (20, 35), "brown_v": 65},
+    "Semangka": {"green": (35, 75), "yellow": (25, 40), "brown_v": 60},
+    "Stroberi": {"green": (40, 85), "yellow": (10, 25), "brown_v": 55},
+    "Anggur": {"green": (35, 75), "yellow": (15, 30), "brown_v": 60},
+    "Nanas": {"green": (35, 75), "yellow": (20, 40), "brown_v": 65}
 }
 
 preset = presets.get(fruit)
@@ -118,4 +127,5 @@ else:
     st.write("Unggah gambar untuk mulai klasifikasi.")
 
 st.markdown("---")
+
 st.markdown("ℹ️ Aplikasi ini memakai pendekatan rule-based HSV. Untuk akurasi lebih tinggi di berbagai varietas dan pencahayaan, bisa ditambah segmentasi buah (GrabCut/DeepLab) atau model klasifikasi terlatih.")
