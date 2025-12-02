@@ -3,3 +3,5 @@ numpy
 opencv-python-headless
 pillow
 pandas
+matplotlib
+
